@@ -1,6 +1,9 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import * as firebase from 'firebase'
+import VueRouter from 'vue-router'
+import router from './router'
+
+/*import * as firebase from 'firebase'
 import VueFirebase from 'vue-firebase'
 
 // Config firebase project
@@ -13,7 +16,9 @@ const FBCONFIG = {
     messagingSenderId: "104109341536"
 };
  
-Vue(App).use(VueFirebase, {firebase: firebase, config: FBCONFIG});
+createApp(App).use(VueFirebase, {firebase: firebase, config: FBCONFIG});*/
 
+const app = createApp(App).use(router)
 
-Vue(App).mount('#app')
+app.use(VueRouter)
+app.mount('#app')
